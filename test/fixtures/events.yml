@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_time: 2019-04-07 18:54:23
+  end_time: 2019-04-07 18:54:23
+  street: MyString
+  city: MyString
+  state: MyString
+  zip_code: MyString
+  thin_mints: 1
+  samoas: 1
+  savannah_smiles: 1
+  tagalongs: 1
+  troop: one
+
+two:
+  start_time: 2019-04-07 18:54:23
+  end_time: 2019-04-07 18:54:23
+  street: MyString
+  city: MyString
+  state: MyString
+  zip_code: MyString
+  thin_mints: 1
+  samoas: 1
+  savannah_smiles: 1
+  tagalongs: 1
+  troop: two

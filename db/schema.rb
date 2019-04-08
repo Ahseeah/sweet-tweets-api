@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_04_013431) do
+ActiveRecord::Schema.define(version: 2019_04_08_002543) do
+
+  create_table "events", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string "street"
+    t.string "city"
+    t.string "state"
+    t.string "zip_code"
+    t.integer "thin_mints"
+    t.integer "samoas"
+    t.integer "savannah_smiles"
+    t.integer "tagalongs"
+    t.integer "troop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["troop_id"], name: "index_events_on_troop_id"
+  end
 
   create_table "troops", force: :cascade do |t|
     t.integer "troop_number"
@@ -24,6 +41,8 @@ ActiveRecord::Schema.define(version: 2019_04_04_013431) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_users_on_user_id"
   end
 
 end
