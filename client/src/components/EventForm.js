@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 import AuthService from './AuthService'
 import DateTimePicker from 'react-datetime-picker'
 
@@ -37,12 +38,21 @@ class EventForm extends Component {
     this.Auth.fetch('/events', {
       method: 'POST',
       body: JSON.stringify({
-        ...this.state
+        troop_id: this.state.troop_id,
+        city: this.state.city,
+        endDate: this.state.endDate,
+        samoas: this.state.samoas,
+        savannah_smiles: this.state.savannah_smiles,
+        startDate: this.state.startDate,
+        state: this.state.state,
+        street: this.state.street,
+        tagalongs: this.state.tagalongs,
+        thin_mints: this.state.thin_mints,
+        zip_code: this.state.zip_code
       })
     })
       .then(res => {
-        console.log('hooray!')
-        this.props.history.replace('/')
+        this.props.history.replace('/success')
       })
       .catch(err => {
         alert(err)
@@ -62,9 +72,10 @@ class EventForm extends Component {
             <label htmlFor="troop-number" />
             <input
               type="number"
-              name="troop_number"
+              name="troop_id"
               required="required"
               placeholder="Troop Number"
+              onChange={this.handleChange}
             />
           </div>
           <div className="form-item">
@@ -74,6 +85,7 @@ class EventForm extends Component {
               name="street"
               required="required"
               placeholder="Street"
+              onChange={this.handleChange}
             />
           </div>
           <div className="form-item">
@@ -83,6 +95,7 @@ class EventForm extends Component {
               name="city"
               required="required"
               placeholder="City"
+              onChange={this.handleChange}
             />
           </div>
           <div className="form-item">
@@ -92,6 +105,7 @@ class EventForm extends Component {
               name="state"
               required="required"
               placeholder="State"
+              onChange={this.handleChange}
             />
           </div>
           <div className="form-item">
@@ -101,6 +115,7 @@ class EventForm extends Component {
               name="zip_code"
               required="required"
               placeholder="Zip Code"
+              onChange={this.handleChange}
             />
           </div>
           <div className="form-item">
@@ -110,6 +125,7 @@ class EventForm extends Component {
               name="thin_mints"
               required="required"
               placeholder="Boxes of Thin Mints"
+              onChange={this.handleChange}
             />
           </div>
           <div className="form-item">
@@ -119,6 +135,7 @@ class EventForm extends Component {
               name="samoas"
               required="required"
               placeholder="Boxes of Samoas"
+              onChange={this.handleChange}
             />
           </div>
           <div className="form-item">
@@ -128,6 +145,7 @@ class EventForm extends Component {
               name="savannah_smiles"
               required="required"
               placeholder="Boxes of Savannah Smiles"
+              onChange={this.handleChange}
             />
           </div>
           <div className="form-item">
@@ -137,6 +155,7 @@ class EventForm extends Component {
               name="tagalongs"
               required="required"
               placeholder="Boxes of Samoas"
+              onChange={this.handleChange}
             />
           </div>
           <div className="form-item">
@@ -170,4 +189,4 @@ class EventForm extends Component {
   }
 }
 
-export default EventForm
+export default withRouter(EventForm)

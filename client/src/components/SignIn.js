@@ -10,7 +10,6 @@ class SignIn extends Component {
   }
   componentWillMount() {
     if (this.Auth.loggedIn()) this.props.history.replace('/')
-    console.log(this.Auth)
   }
   handleChange(e) {
     this.setState({

@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-
+import Header from './Header'
 class SuccessPage extends Component {
   render() {
     return (
       <div>
-        <img src={logo} className="sweet-tweet-logo" alt="logo" />
+        <Header />
+        <p> Success!!</p>
       </div>
     )
   }
