@@ -5,7 +5,18 @@ class SuccessPage extends Component {
     return (
       <div>
         <Header />
-        <p> Success!!</p>
+        <div className="troop-form-wrapper" />
+        <h1>Success!</h1>
+        <form onSubmit={this.handleFormSubmit} />
+        <div className="form-item" />
+        <label htmlFor="success-page" />
+        <input
+          type="text"
+          name="success-page"
+          required="required"
+          placeholder="Success"
+          onChange={this.handleChange}
+        />
       </div>
     )
   }

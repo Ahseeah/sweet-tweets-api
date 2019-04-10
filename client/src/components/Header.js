@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import logo from '../images/Sweet_Tweets_Logo.png'
 import AuthService from './AuthService'
 import WithAuth from './WithAuth'
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 
 const Auth = new AuthService()
 
