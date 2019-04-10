@@ -18,6 +18,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
 
     if @event.save
+  # make call to twitter here
       render :show, status: :created, location: @event
     else
       render json: @event.errors, status: :unprocessable_entity
