@@ -18,7 +18,10 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
 
     if @event.save
-  # make call to twitter here
+      # make call to twitter here
+
+      TWITTER_CLIENT.update("#{@event.troop_id} at #{@event.street} at #{@event.city} at #{@event.state} at #{@event.zip_code} at #{@event.thin_mints} at #{@event.samoas} at #{@event.savannah_smiles} at #{@event.tagalongs}")
+
       render :show, status: :created, location: @event
     else
       render json: @event.errors, status: :unprocessable_entity
@@ -42,13 +45,14 @@ class EventsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_event
-      @event = Event.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def event_params
-      params.require(:event).permit(:start_time, :end_time, :street, :city, :state, :zip_code, :thin_mints, :samoas, :savannah_smiles, :tagalongs, :troop_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_event
+    @event = Event.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def event_params
+    params.require(:event).permit(:start_time, :end_time, :street, :city, :state, :zip_code, :thin_mints, :samoas, :savannah_smiles, :tagalongs, :troop_id)
+  end
 end
