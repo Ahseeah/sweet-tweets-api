@@ -80,6 +80,7 @@ body {
   color: #5e5e5e;
   font: 400 87.5%/1.5em 'Open Sans', sans-serif;
   background-repeat: repeat-x;
+  background-color: #c1e4bf;
 }
 
 /* Form Layout */
@@ -99,12 +100,23 @@ body {
   border-radius: 5px;
 }
 
+.success-wrapper {
+  align-items: center;
+  background: white;
+  margin: 3em auto;
+  padding: 0 1em;
+  max-width: 770px;
+  border-radius: 5px;
+}
+
+.success-body {
+  display: flex;
+  justify-content: space-around;
+}
+
 h1 {
   text-align: center;
   padding: 1em 0;
-}
-
-h2 {
 }
 
 form {
@@ -181,4 +193,8 @@ form {
 
 .Sweet-header {
   text-align: center;
+}
+
+.addButton {
+  width: 150px;
 }
