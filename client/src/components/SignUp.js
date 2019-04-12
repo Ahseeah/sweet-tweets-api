@@ -1,41 +1,67 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
+import AuthService from './AuthService'
 
 class SignUp extends Component {
+  constructor() {
+    super()
+    this.handleChange = this.handleChange.bind(this)
+    this.handleFormSubmit = this.handleFormSubmit.bind(this)
+    this.Auth = new AuthService()
+  }
+
+  handleChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
+  handleFormSubmit(e) {
+    e.preventDefault()
+
+    this.Auth.fetch('/user', {
+      method: 'POST',
+      body: JSON.stringify({
+        ...this.state
+      })
+    })
+      .then(res => {
+        this.props.history.replace('/sign-in')
+      })
+      .catch(err => {
+        alert(err)
+      })
+  }
+
   render() {
     return (
       <div className="troop-form-wrapper">
         <h1>Sign Up</h1>
-        <form>
+        <form onSubmit={this.handleFormSubmit}>
           <div className="form-item">
-            <label for="full name" />
-            <input
-              type="text"
-              name="full-name"
-              required="required"
-              placeholder="Full Name"
-            />
-          </div>
-          <div className="form-item">
-            <label for="email" />
+            <label htmlFor="email" />
             <input
               type="text"
               name="email"
               required="required"
               placeholder="Email"
+              onChange={this.handleChange}
             />
-            <label for="favorite cookie" />
-            <input
-              type="text"
-              name="favorite-cookie"
-              required="required"
-              placeholder="Favorite cookie!"
-            />
-            <label for="password" />
+            <label htmlFor="password" />
             <input
               type="password"
               name="password"
               required="required"
               placeholder="Password"
+              onChange={this.handleChange}
+            />
+            <label htmlFor="password_confirmation" />
+            <input
+              type="password"
+              name="password_confirmation"
+              required="required"
+              placeholder="Password"
+              onChange={this.handleChange}
             />
           </div>
           <div className="button-panel">
@@ -53,4 +79,4 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp
+export default withRouter(SignUp)
