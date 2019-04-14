@@ -18,9 +18,9 @@ class Header extends Component {
       <>
         <div class="header">
           <img src={logo} className="sweet_tweets_logo" alt="logo" />
-          <div className="header-right">
-            <a onClick={this.handleLogout.bind(this)}>Log Out</a>
-          </div>
+          <a className="header-right" onClick={this.handleLogout.bind(this)}>
+            Log Out
+          </a>
         </div>
       </>
     )

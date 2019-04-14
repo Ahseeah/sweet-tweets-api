@@ -70,13 +70,12 @@ class EventForm extends Component {
         <form onSubmit={this.handleFormSubmit}>
           <div className="form-item">
             <label htmlFor="troop-number" />
-            <input
-              type="number"
-              name="troop_id"
-              required="required"
-              placeholder="Troop Number"
-              onChange={this.handleChange}
-            />
+            <select name="troop_id" onChange={this.handleChange}>
+              <option value="">Troop Number</option>
+              {this.state.troops.map(troop => (
+                <option value={troop.id}>{troop.troop_number}</option>
+              ))}
+            </select>
           </div>
           <div className="form-item">
             <label htmlFor="street" />
@@ -190,3 +189,12 @@ class EventForm extends Component {
 }
 
 export default withRouter(EventForm)
+{
+  /* <input
+  type="number"
+  name="troop_id"
+  required="required"
+  placeholder="Troop Number"
+  onChange={this.handleChange}
+/> */
+}

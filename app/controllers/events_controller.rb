@@ -20,7 +20,7 @@ class EventsController < ApplicationController
     if @event.save
       # make call to twitter here
 
-      TWITTER_CLIENT.update("#{@event.troop_id} at #{@event.street} at #{@event.city} at #{@event.state} at #{@event.zip_code} at #{@event.thin_mints} at #{@event.samoas} at #{@event.savannah_smiles} at #{@event.tagalongs}")
+      TWITTER_CLIENT.update(build_tweet)
 
       render :show, status: :created, location: @event
     else
@@ -45,6 +45,10 @@ class EventsController < ApplicationController
   end
 
   private
+
+  def build_tweet
+    "Troop number #{@event.troop_id} will be at #{@event.street} #{@event.city}, #{@event.state} #{@event.zip_code} with #{@event.thin_mints} boxes of Thin Mints, #{@event.samoas} boxes of Samoas, #{@event.savannah_smiles} boxes of Savannah Smiles and #{@event.tagalongs} boxes of Tagalongs!"
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_event
