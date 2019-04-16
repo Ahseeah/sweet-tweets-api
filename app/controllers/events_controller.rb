@@ -47,8 +47,14 @@ class EventsController < ApplicationController
   private
 
   def build_tweet
-    "Troop number #{@event.troop_id} will be at #{@event.street} #{@event.city}, #{@event.state} #{@event.zip_code} with #{@event.thin_mints} boxes of Thin Mints, #{@event.samoas} boxes of Samoas, #{@event.savannah_smiles} boxes of Savannah Smiles and #{@event.tagalongs} boxes of Tagalongs!"
+    map_link = URI.escape("https://www.google.com/maps/place/#{@event.street},#{@event.city},#{@event.state} #{@event.zip_code}")
+
+    "Troop number #{@event.troop_id} will be at #{map_link} with #{@event.thin_mints} boxes of Thin Mints, #{@event.samoas} boxes of Samoas, #{@event.savannah_smiles} boxes of Savannah Smiles and #{@event.tagalongs} boxes of Tagalongs!"
   end
+
+  # def build_tweet
+  #   "Troop number #{@event.troop_id} will be at #{@event.street} #{@event.city}, #{@event.state} #{@event.zip_code} with #{@event.thin_mints} boxes of Thin Mints, #{@event.samoas} boxes of Samoas, #{@event.savannah_smiles} boxes of Savannah Smiles and #{@event.tagalongs} boxes of Tagalongs!"
+  # end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_event

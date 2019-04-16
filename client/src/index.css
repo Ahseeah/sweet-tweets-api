@@ -82,6 +82,10 @@ html {
   .header {
     display: block;
   }
+
+  .form-wrapper {
+    margin: 3em auto;
+  }
 }
 
 /* body */
@@ -97,7 +101,7 @@ body {
 /* Form Layout */
 .form-wrapper {
   background: #fafafa;
-  margin: 3em auto;
+  margin: 7em auto;
   padding: 0 1em;
   max-width: 370px;
   border-radius: 5px;

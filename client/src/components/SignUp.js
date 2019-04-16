@@ -35,7 +35,7 @@ class SignUp extends Component {
 
   render() {
     return (
-      <div className="troop-form-wrapper">
+      <div className="form-wrapper">
         <h1>Sign Up</h1>
         <form onSubmit={this.handleFormSubmit}>
           <div className="form-item">
