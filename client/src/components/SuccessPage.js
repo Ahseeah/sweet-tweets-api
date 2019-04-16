@@ -14,7 +14,7 @@ class SuccessPage extends Component {
       <div>
         <Header />
         <div className="success-wrapper">
-          <h1>Success! It's Cookie Time!</h1>
+          <h1>Yay, it's Cookie Time!</h1>
           <div className="success-body">
             <img
               className="success-img"
