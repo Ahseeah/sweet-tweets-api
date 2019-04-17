@@ -153,7 +153,7 @@ class EventForm extends Component {
               type="text"
               name="tagalongs"
               required="required"
-              placeholder="Boxes of Samoas"
+              placeholder="Boxes of Tagalongs"
               onChange={this.handleChange}
             />
           </div>
