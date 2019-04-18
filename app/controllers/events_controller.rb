@@ -49,7 +49,7 @@ class EventsController < ApplicationController
   def build_tweet
     map_link = URI.escape("https://www.google.com/maps/place/#{@event.street},#{@event.city},#{@event.state} #{@event.zip_code}")
 
-    "Troop number #{@event.troop.troop_number} will be at #{map_link} with #{@event.thin_mints} boxes of Thin Mints, #{@event.samoas} boxes of Samoas, #{@event.savannah_smiles} boxes of Savannah Smiles and #{@event.tagalongs} boxes of Tagalongs!"
+    "Troop number #{@event.troop.troop_number} will be at #{map_link} from #{@event.start_time.to_time.strftime("%e %b %Y %l:%M:%S%p")} to #{@event.end_time.to_time.strftime("%e %b %Y %l:%M:%S%p")} with #{@event.thin_mints} boxes of Thin Mints, #{@event.samoas} boxes of Samoas, #{@event.savannah_smiles} boxes of Savannah Smiles and #{@event.tagalongs} boxes of Tagalongs!"
   end
 
   # def build_tweet

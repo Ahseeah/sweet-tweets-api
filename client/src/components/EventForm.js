@@ -11,8 +11,8 @@ class EventForm extends Component {
     super()
     this.state = {
       troops: [],
-      startDate: today,
-      endDate: tomorrow
+      startDateTime: today,
+      endDateTime: tomorrow
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -40,10 +40,10 @@ class EventForm extends Component {
       body: JSON.stringify({
         troop_id: this.state.troop_id,
         city: this.state.city,
-        endDate: this.state.endDate,
+        end_time: this.state.endDateTime,
         samoas: this.state.samoas,
         savannah_smiles: this.state.savannah_smiles,
-        startDate: this.state.startDate,
+        start_time: this.state.startDateTime,
         state: this.state.state,
         street: this.state.street,
         tagalongs: this.state.tagalongs,
@@ -59,9 +59,9 @@ class EventForm extends Component {
       })
   }
 
-  onStartChange = startDate => this.setState({ startDate })
+  onStartChange = startDateTime => this.setState({ startDateTime })
 
-  onEndChange = endDate => this.setState({ endDate })
+  onEndChange = endDateTime => this.setState({ endDateTime })
 
   render() {
     return (
@@ -161,7 +161,7 @@ class EventForm extends Component {
             <label htmlFor="date-time">Start DateTime: </label>
             <DateTimePicker
               onChange={this.onStartChange}
-              value={this.state.startDate}
+              value={this.state.startDateTime}
               name={'start_time'}
             />
           </div>
@@ -169,7 +169,7 @@ class EventForm extends Component {
             <label htmlFor="date-time">End DateTime: </label>
             <DateTimePicker
               onChange={this.onEndChange}
-              value={this.state.endDate}
+              value={this.state.endDateTime}
               name={'end_time'}
             />
           </div>

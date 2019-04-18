@@ -55,7 +55,7 @@ class SignUp extends Component {
               type="password"
               name="password"
               required="required"
-              placeholder="Password"
+              placeholder="Enter Password"
               onChange={this.handleChange}
             />
             <label htmlFor="password_confirmation" />
@@ -63,7 +63,7 @@ class SignUp extends Component {
               type="password"
               name="password_confirmation"
               required="required"
-              placeholder="Password"
+              placeholder="Re-enter Password"
               onChange={this.handleChange}
             />
           </div>
