@@ -17,7 +17,9 @@ class Header extends Component {
     return (
       <>
         <div class="header">
-          <img src={logo} className="sweet_tweets_logo" alt="logo" />
+          <div className="header-left">
+            <img src={logo} className="sweet-tweets-logo" alt="logo" />
+          </div>
           <a className="header-right" onClick={this.handleLogout.bind(this)}>
             Log Out
           </a>

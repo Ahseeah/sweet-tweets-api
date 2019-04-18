@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import AuthService from './AuthService'
+import logo from '../images/Sweet_Tweets_Logo.png'
 
 class SignIn extends Component {
   constructor() {
@@ -33,7 +34,9 @@ class SignIn extends Component {
     return (
       <figure>
         <div className="form-wrapper">
-          <h1>Sign In</h1>
+          <div className="img-container">
+            <img src={logo} className="sweet-tweets-logo" alt="logo" />
+          </div>
           <form onSubmit={this.handleFormSubmit}>
             <div className="form-item">
               <label htmlFor="email" />

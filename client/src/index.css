@@ -49,8 +49,12 @@ html {
   border-radius: 4px;
 }
 
+.header-left {
+  display: flex;
+}
+
 /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
-.sweet_tweets_logo {
+.sweet-tweets-logo {
   height: 100px;
   padding: 0;
 }
@@ -73,10 +77,9 @@ html {
     align-content: center;
   }
 
-  .sweet_tweets_logo {
+  .sweet-tweets-logo {
     float: none;
-    margin-left: 50%;
-    margin-right: 50%;
+    margin: 0 auto;
   }
 
   .header {
@@ -100,7 +103,7 @@ body {
 
 /* Form Layout */
 .form-wrapper {
-  background: #fafafa;
+  background: #fff;
   margin: 7em auto;
   padding: 0 1em;
   max-width: 370px;
@@ -108,7 +111,7 @@ body {
 }
 
 .troop-form-wrapper {
-  background: #fafafa;
+  background: #fff;
   margin: 3em auto;
   padding: 0 1em;
   max-width: 770px;
@@ -122,6 +125,11 @@ body {
   padding: 0 1em;
   max-width: 770px;
   border-radius: 5px;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
 }
 
 .success-body {
@@ -144,7 +152,7 @@ form {
 }
 
 .form-item input {
-  background: #fafafa;
+  background: #fff;
   border: none;
   border-bottom: 2px solid #e9e9e9;
   color: #666;
@@ -156,7 +164,7 @@ form {
 }
 
 .form-item select {
-  background: #fafafa;
+  background: #fff;
   border: none;
   border-bottom: 2px solid #e9e9e9;
   color: #666;
@@ -170,6 +178,16 @@ form {
 .form-item input:focus {
   border-bottom: 2px solid #c0c0c0;
   outline: none;
+}
+
+.form-item-date {
+  background: #fff;
+  border: none;
+  color: #666;
+  font-family: 'Open Sans', sans-serif;
+  height: 50px;
+  transition: border-color 0.3s;
+  width: 100%;
 }
 
 .button-panel {

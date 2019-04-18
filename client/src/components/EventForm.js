@@ -157,7 +157,7 @@ class EventForm extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <div className="form-item">
+          <div className="form-item-date">
             <label htmlFor="date-time">Start DateTime: </label>
             <DateTimePicker
               onChange={this.onStartChange}
@@ -165,7 +165,7 @@ class EventForm extends Component {
               name={'start_time'}
             />
           </div>
-          <div className="form-item">
+          <div className="form-item-date">
             <label htmlFor="date-time">End DateTime: </label>
             <DateTimePicker
               onChange={this.onEndChange}
@@ -189,12 +189,3 @@ class EventForm extends Component {
 }
 
 export default withRouter(EventForm)
-{
-  /* <input
-  type="number"
-  name="troop_id"
-  required="required"
-  placeholder="Troop Number"
-  onChange={this.handleChange}
-/> */
-}
